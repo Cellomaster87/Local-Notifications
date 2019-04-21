@@ -77,9 +77,17 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
             switch response.actionIdentifier {
             case UNNotificationDefaultActionIdentifier:
                 // the user swiped to unlock
+                let swipeAC = UIAlertController(title: "Congratulations", message: "You launched the app by unlocking your phone!", preferredStyle: .alert)
+                swipeAC.addAction(UIAlertAction(title: "Thanks!", style: .default))
+                
+                present(swipeAC, animated: true)
                 print("Default identifier")
             case "show":
                 // the user tapped our "show more info..." button
+                let tapAC = UIAlertController(title: "Victory!", message: #"You launched the app after tapping the "Show more info" button"#, preferredStyle: .alert)
+                tapAC.addAction(UIAlertAction(title: "Amazing!", style: .default))
+                
+                present(tapAC, animated: true)
                 print("Show more information...")
             default:
                 break
